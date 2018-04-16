@@ -1,0 +1,4 @@
+/build/*_Debug/
+/build/*_Release/
+/build/*_RelWithDebInfo//build/*_MinSizeRel//deploy_Debug/
+/deploy_Release//deploy_RelWithDebInfo//deploy_MinSizeRel/
