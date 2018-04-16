@@ -1,0 +1,12 @@
+[submodule "src/thirdparty/eigen"]
+	path = src/thirdparty/eigen
+	url = https://github.com/eigenteam/eigen-git-mirror.git
+[submodule "src/thirdparty/nowide"]
+	path = src/thirdparty/nowide
+	url = https://github.com/rwiesenfarth/nowide.git
+[submodule "src/thirdparty/openMVG"]
+	path = src/thirdparty/openMVG
+	url = https://github.com/rwiesenfarth/openMVG.git
+[submodule "src/thirdparty/cereal/repo"]
+	path = src/thirdparty/cereal/repo
+	url = https://github.com/USCiLab/cereal.git
