@@ -1,0 +1,4 @@
+
+# Build environment
+set( CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/../../${GLUE_DEPLOY_DIR}" CACHE FILEPATH "(predefined)" FORCE )
+set( EIGEN_INCLUDE_INSTALL_DIR "${CMAKE_BINARY_DIR}/../../${GLUE_DEPLOY_DIR}/include" CACHE FILEPATH "(predefined)" FORCE )

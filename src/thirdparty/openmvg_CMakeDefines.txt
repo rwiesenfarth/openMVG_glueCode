@@ -1,0 +1,40 @@
+
+##
+##  Module Selection
+##
+set( BUILD_CUDA_LIB              ON  CACHE BOOL   "(predefined)" FORCE )
+set( CXSPARSE                    OFF CACHE BOOL   "(predefined)" FORCE )
+set( EIGENSPARSE                 OFF CACHE BOOL   "(predefined)" FORCE )
+
+## Build shared objects for licensing reasons.
+set( OpenMVG_BUILD_SHARED        ON  CACHE BOOL   "(predefined)" FORCE )
+
+## The examples use very long path names, leading to build errors in a typical environment. Thus these are
+## disabled for now.
+set( OpenMVG_BUILD_EXAMPLES      OFF CACHE BOOL   "(predefined)" FORCE )
+
+## The GUI software uses Qt and would use the environment available. This fails for the Debug build,
+## as the current version 5.6.2 has an issue with the CMake files for Debug (refers to qtmain.lib instead of
+## qtmaind.lib). Thus the GUI software is disabled.
+set( OpenMVG_BUILD_GUI_SOFTWARES OFF CACHE BOOL   "(predefined)" FORCE )
+
+## If the TARGET_ARCHITECTURE is not defined it defaults to "auto". This does not introduce a problem for
+## OpenMVG itself, but in combination with other software. The "auto" architecture may enable AVX2 which
+## changes the alignment parameters of the Eigen aligned allocator, leading to heap corruption if other parts
+## are compiled with different settings.
+set( TARGET_ARCHITECTURE   "nehalem" CACHE STRING "(predefined)" FORCE )
+
+##
+## Build environment
+##
+## WARNING: by the time this file is parsed, both CMAKE_SOURCE_DIR and CMAKE_BINARY_DIR point to the directory
+## where CMake was called. In our case this is .../build/openmvg.
+##
+#set( CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/../../${GLUE_DEPLOY_DIR}" CACHE PATH "(predefined)" FORCE )
+#set( INCLUDE_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/include/eigen" CACHE PATH "(predefined)" FORCE )
+
+set( CMAKE_OBJECT_PATH_MAX 160 )
+set( CMAKE_INSTALL_PREFIX "${CMAKE_BINARY_DIR}/../../${GLUE_DEPLOY_DIR}" CACHE PATH "(predefined)" FORCE )
+set( NOWIDE_INCLUDE_DIR_HINTS "${CMAKE_BINARY_DIR}/../../src/thirdparty/nowide" CACHE PATH "(predefined)" FORCE )
+set( CEREAL_INCLUDE_DIR_HINTS "${CMAKE_BINARY_DIR}/../../src/thirdparty/cereal/repo/include" CACHE PATH "(predefined)" FORCE )
+set( EIGEN_INCLUDE_DIR_HINTS "${CMAKE_BINARY_DIR}/../../src/thirdparty/eigen" CACHE PATH "(predefined)" FORCE )

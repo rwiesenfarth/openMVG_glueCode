@@ -1,0 +1,9 @@
+
+Notes about the used Eigen version:
+
+- the used branch can be found in eigen/Eigen/src/Core/util/Macros.h
+  the used version is tag 3.3.4, commit #5a0156e on branch 3.3,
+  dated 2017-06-15
+
+- whenever the version is changed, the new version should also be
+  a tagged one

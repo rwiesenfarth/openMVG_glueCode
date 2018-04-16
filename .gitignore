@@ -1,0 +1,5 @@
+
+/build/*_Debug/
+/build/*_RelWithDebInfo/
+/deploy_Debug/
+/deploy_RelWithDebInfo/
